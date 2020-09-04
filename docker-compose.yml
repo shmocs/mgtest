@@ -10,7 +10,6 @@ services:
     image: cytopia/mysql-5.7:latest
     container_name: mysql
     hostname: mysql
-    restart: always
 
     environment:
       - MYSQL_ROOT_PASSWORD
@@ -25,7 +24,6 @@ services:
     image: rabbitmq:3-management
     container_name: rabbitmq
     hostname: rabbitmq
-    restart: always
 
     ports:
       - 5672:5672
@@ -36,6 +34,11 @@ services:
     image: registry.gitlab.com/vivredeco/php74-fpm:latest
     container_name: php74
     hostname: php74
+    working_dir: /var/www/html
+
+    ports:
+      - 8888:8000
+
     volumes:
       - .:/var/www/html
     links:
