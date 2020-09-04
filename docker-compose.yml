@@ -37,7 +37,7 @@ services:
     container_name: php74
     hostname: php74
     volumes:
-      - .:/app
+      - .:/var/www/html
     links:
       - rabbitmq
       - mysql
