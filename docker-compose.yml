@@ -1,0 +1,43 @@
+version: '3.7'
+
+services:
+
+
+  # ------------------------------------------------------------
+  # MySQL Database
+  # ------------------------------------------------------------
+  mysql:
+    image: cytopia/mysql-5.7:latest
+    container_name: mysql
+    hostname: mysql
+    restart: always
+
+    environment:
+      - MYSQL_ROOT_PASSWORD
+      - MYSQL_SOCKET_DIR=/tmp/mysql
+
+    volumes:
+      - ./data/mysql-5.7:/var/lib/mysql
+
+
+  rabbitmq:
+    #image: bitnami/rabbitmq:3.7
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    hostname: rabbitmq
+    restart: always
+
+    ports:
+      - 5672:5672
+      - 15672:15672
+
+
+  php74:
+    image: registry.gitlab.com/vivredeco/php74-fpm:latest
+    container_name: php74
+    hostname: php74
+    volumes:
+      - .:/app
+    links:
+      - rabbitmq
+      - mysql
