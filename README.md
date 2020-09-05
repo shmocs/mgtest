@@ -1,6 +1,15 @@
 MindGeek Test
 ---
 
+[![Release](https://img.shields.io/badge/release-1.0-orange.svg)](https://github.com/shmocs/mgtest)
+[![type](https://img.shields.io/badge/type-Docker-blue.svg)](https://www.docker.com/)
+
+
+## Requirements
+
+* [Docker Engine](https://docs.docker.com/engine/install/)
+* [Docker Compose](https://docs.docker.com/compose/install/)
+
 ## Installation
 - `git clone https://github.com/shmocs/mgtest`
 - `cd mgtest`
