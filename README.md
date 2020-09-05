@@ -51,7 +51,7 @@ In a new terminal: `docker-compose exec php74 bash`
 In a new terminal: `docker-compose exec php74 bash`
 - `php artisan import`
 ![demo](docs/img/import.png)
-- when items import id ready - it will launch the producer command (to put all unprocessed images in queue for caching)
+- when items import is ready - it will launch the producer command (to put all unprocessed images in queue for caching)
 - site should be ready/visible/populated now - even if not all images are yet cached  
 
 **In the meantime consumer started to process messages**
